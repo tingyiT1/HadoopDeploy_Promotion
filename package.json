@@ -1,0 +1,102 @@
+{
+  "name": "hadoopdeploy-promotion",
+  "version": "1.0.0",
+  "description": "HadoopDeploy_tool项目宣传网站 - 让Hadoop集群部署变得简单高效",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "live-server --port=8000 --open=/",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss css/style.css -o dist/style.min.css && postcss css/animations.css -o dist/animations.min.css",
+    "build:js": "uglifyjs js/main.js -o dist/main.min.js",
+    "optimize": "npm run optimize:images && npm run optimize:html",
+    "optimize:images": "imagemin images/* --out-dir=dist/images",
+    "optimize:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true index.html -o dist/index.html",
+    "lint": "eslint js/*.js",
+    "lint:css": "stylelint css/*.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build && npm run optimize",
+    "serve:prod": "serve dist"
+  },
+  "keywords": [
+    "hadoop",
+    "deployment",
+    "automation",
+    "big-data",
+    "cluster",
+    "promotion",
+    "landing-page",
+    "responsive",
+    "modern"
+  ],
+  "author": {
+    "name": "violet27-chf",
+    "email": "violet27.chf@gmail.com",
+    "url": "https://github.com/violet27-chf"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/violet27-chf/HadoopDeploy_tool.git",
+    "directory": "HadoopDeploy_Promotion"
+  },
+  "bugs": {
+    "url": "https://github.com/violet27-chf/HadoopDeploy_tool/issues"
+  },
+  "homepage": "https://github.com/violet27-chf/HadoopDeploy_tool#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.45.0",
+    "html-minifier": "^4.0.0",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "serve": "^14.2.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "uglify-js": "^3.17.4"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {
+        "preset": "default"
+      }
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "warn"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "selector-class-pattern": null,
+      "no-descending-specificity": null
+    }
+  }
+} 

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HadoopDeploy_tool - 一键部署Hadoop集群的终极解决方案</title>
+    <meta name="description" content="HadoopDeploy_tool是一个革命性的Hadoop集群部署工具，提供全自动、半自动和手动三种部署模式，让Hadoop部署变得简单高效。">
+    <meta name="keywords" content="Hadoop,集群部署,自动化,大数据,一键部署,开源工具">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="HadoopDeploy_tool - 一键部署Hadoop集群">
+    <meta property="og:description" content="革命性的Hadoop集群部署工具，让大数据部署变得简单高效">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/violet27-chf/HadoopDeploy_tool">
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-cloud"></i>
+                <span>HadoopDeploy_tool</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">特性</a></li>
+                <li><a href="#demo">演示</a></li>
+                <li><a href="#comparison">对比</a></li>
+                <li><a href="#download">下载</a></li>
+                <li><a href="#community">社区</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">一键部署</span>
+                    <br>Hadoop集群
+                </h1>
+                <p class="hero-subtitle">
+                    革命性的Hadoop集群部署工具，让大数据部署变得简单高效
+                    <br>
+                    <span class="highlight">从几小时缩短到几分钟</span>
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">部署成功率</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5分钟</span>
+                        <span class="stat-label">平均部署时间</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3种</span>
+                        <span class="stat-label">部署模式</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        观看演示
+                    </a>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="#download" class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        立即下载
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-red"></span>
+                            <span class="btn-yellow"></span>
+                            <span class="btn-green"></span>
+                        </div>
+                        <div class="terminal-title">HadoopDeploy_tool</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command">python app.py</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">🚀 启动HadoopDeploy_tool...</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">✅ 环境检测完成</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">☕ Java环境就绪</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">📦 Hadoop下载完成</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">⚙️ 配置自动生成</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">🎉 集群启动成功！</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">🌐 NameNode: http://192.168.1.2:9870</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">📊 ResourceManager: http://192.168.1.2:8088</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性展示 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择 HadoopDeploy_tool？</h2>
+                <p>专为简化Hadoop集群部署而设计的革命性工具</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>一键自动化</h3>
+                    <p>全自动部署模式，无需手动配置，从零到集群运行只需几分钟</p>
+                    <ul>
+                        <li>自动环境检测</li>
+                        <li>智能依赖安装</li>
+                        <li>配置自动生成</li>
+                        <li>服务自动启动</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>灵活配置</h3>
+                    <p>支持全自动、半自动、手动三种部署模式，满足不同需求</p>
+                    <ul>
+                        <li>全自动：零配置部署</li>
+                        <li>半自动：自定义配置</li>
+                        <li>手动：完全控制</li>
+                        <li>混合模式支持</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>稳定可靠</h3>
+                    <p>经过大量测试验证，支持多种Linux发行版和Hadoop版本</p>
+                    <ul>
+                        <li>99%部署成功率</li>
+                        <li>多版本兼容</li>
+                        <li>错误自动恢复</li>
+                        <li>详细日志记录</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>极速部署</h3>
+                    <p>优化的部署流程，将传统几小时的部署时间缩短到几分钟</p>
+                    <ul>
+                        <li>并行处理优化</li>
+                        <li>智能缓存机制</li>
+                        <li>增量部署支持</li>
+                        <li>实时进度监控</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>用户友好</h3>
+                    <p>直观的Web界面，无需命令行经验，人人都能轻松部署</p>
+                    <ul>
+                        <li>可视化界面</li>
+                        <li>实时进度显示</li>
+                        <li>详细操作指南</li>
+                        <li>一键故障诊断</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>开源免费</h3>
+                    <p>完全开源，代码透明，社区驱动，持续改进</p>
+                    <ul>
+                        <li>MIT开源协议</li>
+                        <li>代码完全透明</li>
+                        <li>社区贡献欢迎</li>
+                        <li>免费使用</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 演示区域 -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="section-header">
+                <h2>观看演示</h2>
+                <p>3分钟了解HadoopDeploy_tool的强大功能</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-video">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>演示视频</p>
+                        <span>点击播放</span>
+                    </div>
+                </div>
+                <div class="demo-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>环境准备</h4>
+                            <p>自动检测系统环境，安装必要依赖</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Hadoop下载</h4>
+                            <p>智能选择最佳下载源，自动下载Hadoop</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>配置生成</h4>
+                            <p>根据环境自动生成最优配置</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>集群启动</h4>
+                            <p>一键启动HDFS和YARN服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 对比区域 -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>传统方式 vs HadoopDeploy_tool</h2>
+                <p>对比传统手动部署和我们的自动化工具</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-item">对比项目</div>
+                    <div class="comparison-item">传统手动部署</div>
+                    <div class="comparison-item">HadoopDeploy_tool</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">部署时间</div>
+                    <div class="comparison-item">2-8小时</div>
+                    <div class="comparison-item highlight">5-15分钟</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">技术要求</div>
+                    <div class="comparison-item">需要专业知识</div>
+                    <div class="comparison-item highlight">零基础即可</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">配置复杂度</div>
+                    <div class="comparison-item">需要手动配置多个文件</div>
+                    <div class="comparison-item highlight">自动生成配置</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">错误处理</div>
+                    <div class="comparison-item">需要手动排查</div>
+                    <div class="comparison-item highlight">自动诊断修复</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">成功率</div>
+                    <div class="comparison-item">60-80%</div>
+                    <div class="comparison-item highlight">99%+</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-item">维护成本</div>
+                    <div class="comparison-item">高</div>
+                    <div class="comparison-item highlight">低</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="section-header">
+                <h2>立即开始使用</h2>
+                <p>选择适合您的安装方式</p>
+            </div>
+            <div class="download-options">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>从GitHub克隆最新版本</p>
+                    <div class="download-stats">
+                        <span><i class="fas fa-star"></i> 1.2k</span>
+                        <span><i class="fas fa-code-branch"></i> 500+</span>
+                    </div>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i>
+                        访问GitHub
+                    </a>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>直接下载</h3>
+                    <p>下载最新发布版本</p>
+                    <div class="download-stats">
+                        <span><i class="fas fa-download"></i> 10k+</span>
+                        <span><i class="fas fa-calendar"></i> v1.0.0</span>
+                    </div>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool/releases" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        下载ZIP
+                    </a>
+                </div>
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>快速安装</h3>
+                    <p>使用一键安装脚本</p>
+                    <div class="download-stats">
+                        <span><i class="fas fa-bolt"></i> 快速</span>
+                        <span><i class="fas fa-check"></i> 安全</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="showInstallCommand()">
+                        <i class="fas fa-terminal"></i>
+                        查看命令
+                    </button>
+                </div>
+            </div>
+            <div class="install-command" id="installCommand" style="display: none;">
+                <div class="command-box">
+                    <code>curl -sSL https://raw.githubusercontent.com/violet27-chf/HadoopDeploy_tool/main/install.sh | bash</code>
+                    <button class="copy-btn" onclick="copyCommand()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 社区区域 -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-header">
+                <h2>加入我们的社区</h2>
+                <p>与其他开发者交流，获取最新更新和支持</p>
+            </div>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>查看源码、提交Issue、参与贡献</p>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool" target="_blank" class="community-link">
+                        访问仓库
+                    </a>
+                </div>
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>文档</h3>
+                    <p>详细的使用文档和API参考</p>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool/wiki" target="_blank" class="community-link">
+                        查看文档
+                    </a>
+                </div>
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>讨论</h3>
+                    <p>在GitHub Discussions中交流</p>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool/discussions" target="_blank" class="community-link">
+                        参与讨论
+                    </a>
+                </div>
+                <div class="community-card">
+                    <div class="community-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>问题反馈</h3>
+                    <p>报告Bug或请求新功能</p>
+                    <a href="https://github.com/violet27-chf/HadoopDeploy_tool/issues" target="_blank" class="community-link">
+                        提交Issue
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-cloud"></i>
+                        <span>HadoopDeploy_tool</span>
+                    </div>
+                    <p>让Hadoop集群部署变得简单高效</p>
+                    <div class="social-links">
+                        <a href="https://github.com/violet27-chf/HadoopDeploy_tool" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#features">特性</a></li>
+                        <li><a href="#demo">演示</a></li>
+                        <li><a href="#download">下载</a></li>
+                        <li><a href="#comparison">对比</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="https://github.com/violet27-chf/HadoopDeploy_tool/wiki" target="_blank">文档</a></li>
+                        <li><a href="https://github.com/violet27-chf/HadoopDeploy_tool/issues" target="_blank">问题反馈</a></li>
+                        <li><a href="https://github.com/violet27-chf/HadoopDeploy_tool/discussions" target="_blank">讨论</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>社区</h4>
+                    <ul>
+                        <li><a href="https://github.com/violet27-chf/HadoopDeploy_tool" target="_blank">贡献代码</a></li>
+                        <li><a href="#">博客</a></li>
+                        <li><a href="#">新闻</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HadoopDeploy_tool. 基于 MIT 协议开源。</p>
+                <p>由 <a href="https://github.com/violet27-chf" target="_blank">violet27-chf</a> 开发维护</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -220,8 +220,29 @@ add_header X-XSS-Protection "1; mode=block";
 ## 👥 合作者
 
 ### 核心团队
-- **[tingyiT1](https://github.com/tingyiT1)** - 项目负责人 & 前端开发 & UI设计
-- **[violet27-chf](https://github.com/violet27-chf)** - 后端开发 & 工具开发
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/tingyiT1">
+        <img src="https://avatars.githubusercontent.com/tingyiT1" width="100px;" alt="tingyiT1"/>
+        <br />
+        <sub><b>tingyiT1</b></sub>
+      </a>
+      <br />
+      <sub>项目负责人 & 前端开发 & UI设计</sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/violet27-chf">
+        <img src="https://avatars.githubusercontent.com/violet27-chf" width="100px;" alt="violet27-chf"/>
+        <br />
+        <sub><b>violet27-chf</b></sub>
+      </a>
+      <br />
+      <sub>后端开发 & 工具开发</sub>
+    </td>
+  </tr>
+</table>
 
 ### 贡献者
 感谢所有为项目做出贡献的开发者！

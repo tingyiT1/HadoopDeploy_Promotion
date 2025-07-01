@@ -192,7 +192,69 @@ function initVideoPlaceholder() {
     const videoPlaceholder = document.querySelector('.video-placeholder');
     if (videoPlaceholder) {
         videoPlaceholder.addEventListener('click', function() {
-            showNotification('演示视频功能即将上线！', 'info');
+            // 检查是否已经有视频在播放
+            const existingVideo = videoPlaceholder.querySelector('video');
+            if (existingVideo) {
+                existingVideo.remove();
+                videoPlaceholder.classList.remove('playing');
+                return;
+            }
+
+            // 创建视频元素
+            const video = document.createElement('video');
+            video.controls = true;
+            video.autoplay = true;
+            video.preload = 'metadata';
+            
+            // 设置视频源（尝试多个可能的路径）
+            const videoPaths = [
+                './video/HadoopDeploy_tool.mp4',
+                '../video/HadoopDeploy_tool.mp4',
+                './HadoopDeploy_Promotion/video/HadoopDeploy_tool.mp4'
+            ];
+            
+            let currentPathIndex = 0;
+            
+            function tryNextPath() {
+                if (currentPathIndex < videoPaths.length) {
+                    video.src = videoPaths[currentPathIndex];
+                    currentPathIndex++;
+                } else {
+                    // 所有路径都失败
+                    showNotification('视频文件未找到，请检查文件路径', 'error');
+                    video.remove();
+                    videoPlaceholder.classList.remove('playing');
+                }
+            }
+            
+            // 视频加载错误处理
+            video.addEventListener('error', function() {
+                console.error('视频加载失败:', video.src);
+                tryNextPath();
+            });
+            
+            // 视频加载成功
+            video.addEventListener('loadeddata', function() {
+                console.log('视频加载成功:', video.src);
+                videoPlaceholder.classList.add('playing');
+            });
+            
+            // 视频播放结束
+            video.addEventListener('ended', function() {
+                showNotification('视频播放完成', 'info');
+                videoPlaceholder.classList.remove('playing');
+            });
+            
+            // 视频播放
+            video.addEventListener('play', function() {
+                videoPlaceholder.classList.add('playing');
+            });
+            
+            // 添加到占位符中
+            videoPlaceholder.appendChild(video);
+            
+            // 尝试第一个路径
+            tryNextPath();
         });
     }
 }

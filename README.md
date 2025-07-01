@@ -42,7 +42,7 @@ HadoopDeploy_Promotion/
 
 1. **克隆项目**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/violet27-chf/HadoopDeploy_Promotion.git
    cd HadoopDeploy_Promotion
    ```
 
@@ -230,7 +230,7 @@ add_header X-XSS-Protection "1; mode=block";
         <sub><b>tingyiT1</b></sub>
       </a>
       <br />
-      <sub>项目负责人 & 前端开发 & UI设计</sub>
+      <sub>前端开发 & UI设计</sub>
     </td>
     <td align="center">
       <a href="https://github.com/violet27-chf">

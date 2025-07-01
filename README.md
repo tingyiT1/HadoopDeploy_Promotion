@@ -217,6 +217,29 @@ add_header X-Content-Type-Options "nosniff";
 add_header X-XSS-Protection "1; mode=block";
 ```
 
+## 👥 合作者
+
+### 核心团队
+- **[tingyiT1](https://github.com/tingyiT1)** - 项目负责人 & 前端开发 & UI设计
+- **[violet27-chf](https://github.com/violet27-chf)** - 后端开发 & 工具开发
+
+### 贡献者
+感谢所有为项目做出贡献的开发者！
+
+### 加入我们
+如果您想成为项目合作者，请：
+1. Fork本项目
+2. 创建您的功能分支
+3. 提交您的更改
+4. 发起Pull Request
+
+我们欢迎所有形式的贡献，包括但不限于：
+- 🐛 Bug修复
+- ✨ 新功能开发
+- 📝 文档改进
+- 🎨 UI/UX优化
+- 🔧 性能优化
+
 ## 🤝 贡献指南
 
 ### 开发流程
